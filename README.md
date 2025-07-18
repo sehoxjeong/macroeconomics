@@ -37,7 +37,7 @@ Contents of the repository heavily draws from a lot of great sources.
 
 List of references are listed below:
 
-### Lecture Nots and Online Materials
+### Lecture Notes and Online Materials
 
 - **Kwak, Jun Hee. 2025.** "Macroeconomics." Sogang University.
 - **Sargent, Thomas J. and John Stachurski. n.d.** "A First Course in Quantitative Economics with Python." QuantEcon. https://intro.quantecon.org/intro.html.
