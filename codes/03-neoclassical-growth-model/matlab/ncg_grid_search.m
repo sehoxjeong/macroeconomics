@@ -1,9 +1,12 @@
-% Neoclassical Growth Model
-% Seho Jeong, Sogang University
-% September 2025
+%{
+SOLVING DETERMINISTIC NEOCLASSICAL GROWTH IN DISCRETE TIME WITH GRID SEARCH
 
-% References
-% Chris Edmond. 2019. Lecture Slides on Macroeconomics (PhD core). https://www.chrisedmond.net/phd2019.html
+AUTHOR: Seho Jeong, Sogang University
+DATE: 2025-09-14
+REFERENCES:
+- Edmond, Chris. 2019. "Lectures on Macroeconomics (PhD Core)." University of Melbourne.
+- Hong, Jay H. 2025. "Lectures on Topics in Macroeconomics." Seoul National University.
+%}
 
 clear all; clc
 
@@ -52,7 +55,7 @@ V = zeros(knum, 1);
 
 hold on
 % Iterate on Bellman operator
-for iter=1:max_iter,
+for iter=1:max_iter
     % RHS of Bellman equation
     RHS = u + beta * kron(ones(knum, 1), V');
 
@@ -64,12 +67,14 @@ for iter=1:max_iter,
 
     % Check if converged.
     error = norm(TV - V, inf);
-    fprintf('%4i %6.2e \n', [iter, error]);
-    if error < tol, break, end;
+    if error < tol
+        fprintf('%4i %6.2e \n', [iter, error])
+        break
+    end
 
     V = TV;
-    if rem(iter, 10)==0
-        plot(kgrid, V)
+    if rem(iter, 10) == 0
+        fprintf('%4i %6.2e \n', [iter, error]);
     end
 end
 
